@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body style="font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f4f4f4;">
+
+    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); text-align: center; width: 350px;">
+        <h2 style="color: #333; margin-bottom: 10px;">Make a Payment</h2>
+        <p style="font-size: 18px; color: #666; margin-bottom: 20px;">Secure payment with Razorpay.</p>
+        <button id="pay-button" 
+            style="padding: 12px 20px; font-size: 16px; color: white; background-color: #3399cc; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s;" 
+            onmouseover="this.style.backgroundColor='#2678a0'" onmouseout="this.style.backgroundColor='#3399cc'">
+            Pay Now
+        </button>
+    </div>
+
+    <script>
+        document.getElementById("pay-button").addEventListener("click", async function() {
+            try {
+                // Create order by calling your backend API
+                const response = await fetch("http://localhost:3000/create-order", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ amount: 500, currency: "INR" }) // Amount in INR (₹5.00)
+                });
+                const orderData = await response.json();
+
+                if (!orderData.orderId) {
+                    alert("Error creating order");
+                    return;
+                }
+
+                // Initialize Razorpay payment
+                var options = {
+                    key: "rzp_test_fjDyGwWUvYSziJ", // Replace with your Razorpay Key ID
+                    amount: orderData.amount,
+                    currency: orderData.currency,
+                    order_id: orderData.orderId,
+                    name: "House Rent Project",
+                    description: "Registeration fees",
+                    handler: async function(response) {
+                        const verifyResponse = await fetch("http://localhost:3000/verify-payment", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                order_id: orderData.orderId,
+                                payment_id: response.razorpay_payment_id,
+                                signature: response.razorpay_signature
+                            })
+                        });
+                        const verifyData = await verifyResponse.json();
+                        if (verifyData.success) {
+                            alert("Payment Successful!");
+                        } else {
+                            alert("Payment Verification Failed");
+                        }
+                    },
+                    prefill: {
+                        name: "House Rent Project",
+                        email: "customer@example.com",
+                        contact: "9967405563"
+                    },
+                    theme: { color: "#3399cc" }
+                };
+
+                var rzp = new Razorpay(options);
+                rzp.open();
+            } catch (error) {
+                console.error("Payment error:", error);
+                alert("Payment initiation failed");
+            }
+        });
+    </script>
+</body>
+</html>

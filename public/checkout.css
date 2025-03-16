@@ -1,0 +1,94 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Light background color */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #4CAF50; /* Green color for the main title */
+    font-size: 2.5em; /* Larger font size for visibility */
+}
+
+h2 {
+    color: #333; /* Dark grey color for subtitles */
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form elements */
+}
+
+label {
+    display: block; /* Make labels block elements */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #555; /* Medium grey color for labels */
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full-width inputs */
+    padding: 10px; /* Inner padding for better touch */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and label */
+}
+
+.packaging-options,
+.shipping-options {
+    margin: 15px 0; /* Margin around the options fieldset */
+    padding: 10px; /* Inner padding */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.packaging-options legend,
+.shipping-options legend {
+    font-weight: bold; /* Bold for the legend */
+    color: #4CAF50; /* Green color for legend */
+}
+
+.btn {
+    display: block; /* Make the button full-width */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 15px; /* Ample padding for button */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.1em; /* Slightly larger font size */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor for the button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em; /* Smaller font size for footer */
+    color: #888; /* Light grey color for footer text */
+}

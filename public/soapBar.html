@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soap Bars</title>
+    <link rel="stylesheet" href="./dental.css">
+</head>
+
+<body style="background-color: black;">
+    <section id="recycle">
+        <h2>Best Selling Eco-Friendly Products</h2>
+        <div class="product-list">
+
+            <!-- product 1 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://greenfeels.in/cdn/shop/products/SWAP2538.jpg?v=1655320539"
+                        data-hover="https://greenfeels.in/cdn/shop/products/20211011_151705.jpg?v=1655320539"
+                        alt="Eco Product 1">
+                </div>
+                <h3>Natural DishWash Bar</h3>
+                <p>M.R.P. Rs. 85.00</p>
+                <button onclick="decreaseItem('Natural DishWash Bar', 85)"
+                    style="padding: 5px 9px; font-size: 18px;">-</button>
+                <button onclick="addToCart('Natural DishWash Bar', 85)" style="padding: 3px 9px; font-size: 18px;">Add to
+                    Cart</button>
+                <button onclick="increaseItem('Natural DishWash Bar', 85)"
+                    style="padding: 3px 9px; font-size: 18px;">+</button>
+            </div>
+
+            <!-- product 2 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://greenfeels.in/cdn/shop/products/Lemongrass.jpg?v=1656576591"
+                        data-hover="https://greenfeels.in/cdn/shop/products/Lemongrass-2.jpg?v=1656576587"
+                        alt="Eco Product 2">
+                </div>
+                <h3>Lemongrass Soap</h3>
+                <p>M.R.P. Rs. 180.00</p>
+                <button onclick="decreaseItem('Lemongrass Soap', 180)"
+                    style="padding: 5px 9px; font-size: 18px;">-</button>
+                <button onclick="addToCart('Lemongrass Soap', 180)" style="padding: 3px 9px; font-size: 18px;">Add to
+                    Cart</button>
+                <button onclick="increaseItem('Lemongrass Soap', 180)"
+                    style="padding: 3px 9px; font-size: 18px;">+</button>
+            </div>
+
+
+            <!-- product 3 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://greenfeels.in/cdn/shop/products/Lavender_edit_900x_a1633aa6-6086-411e-a430-47206cfc22cf.png?v=1668713494"
+                        data-hover="https://greenfeels.in/cdn/shop/products/lavender100g_frontwsoap_900x_aed8bc9f-5ed3-4f3e-a890-e5303b429a0c.png?v=1668713494"
+                        alt="Eco Product 2">
+                </div>
+                <h3>Handmade Soap Lavender</h3>
+                <p>M.R.P. Rs. 240.00</p>
+                <button onclick="decreaseItem('Handmade Soap Lavender', 240)"
+                    style="padding: 5px 9px; font-size: 18px;">-</button>
+                <button onclick="addToCart('Handmade Soap Lavender', 240)" style="padding: 3px 9px; font-size: 18px;">Add to
+                    Cart</button>
+                <button onclick="increaseItem('Handmade Soap Lavender', 240)"
+                    style="padding: 3px 9px; font-size: 18px;">+</button>
+            </div>
+
+            
+            <!-- product 4 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://greenfeels.in/cdn/shop/products/Vanilla_edit_900x_3030297c-15a8-476e-8835-6a9b3159a804.png?v=1668713938"
+                        data-hover="https://greenfeels.in/cdn/shop/products/vanilla100g_frontwsoap_900x_511b2229-085a-47e1-ab8d-49bf2cc256d5.png?v=1668713937"
+                        alt="Eco Product 2">
+                </div>
+                <h3>Handmade Soap Vanilla</h3>
+                <p>M.R.P. Rs. 240.00</p>
+                <button onclick="decreaseItem('Handmade Soap Vanilla', 240"
+                    style="padding: 5px 9px; font-size: 18px;">-</button>
+                <button onclick="addToCart('Handmade Soap Vanilla', 240)" style="padding: 3px 9px; font-size: 18px;">Add to
+                    Cart</button>
+                <button onclick="increaseItem('Handmade Soap Vanilla', 240)"
+                    style="padding: 3px 9px; font-size: 18px;">+</button>
+            </div>
+
+
+            <!-- product 5-->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://greenfeels.in/cdn/shop/products/Geranium_edit_900x_f7ddd0ef-5a30-4b3b-a7ab-5d60b5f461f2.png?v=1668713110"
+                        data-hover="https://greenfeels.in/cdn/shop/products/geranium100g_backwsoap_900x_253e1714-da96-4c2d-b3ff-dd2288c7f212.png?v=1668713110"
+                        alt="Eco Product 2">
+                </div>
+                <h3>Handmade Soap Geranium</h3>
+                <p>M.R.P. Rs. 240.00</p>
+                <button onclick="decreaseItem('Handmade Soap Geranium', 240)"
+                    style="padding: 5px 9px; font-size: 18px;">-</button>
+                <button onclick="addToCart('Handmade Soap Geranium', 240)" style="padding: 3px 9px; font-size: 18px;">Add to
+                    Cart</button>
+                <button onclick="increaseItem('Handmade Soap Geranium', 240)"
+                    style="padding: 5px 9px; font-size: 18px;">+</button>
+            </div>
+
+
+             <!-- product 6-->
+             <div class="product-item">
+                <div class="product-image">
+                    <img src="https://greenfeels.in/cdn/shop/products/Jasmine_edit_900x_65ee60db-760f-45f4-82d3-5abcbb7ac940.png?v=1668713329"
+                        data-hover="https://greenfeels.in/cdn/shop/products/jasmine100g_backwsoap_900x_e1fd178a-9de0-4483-80ed-5163c9ef44f7.png?v=1668713329"
+                        alt="Eco Product 2">
+                </div>
+                <h3>Handmade Soap Jasmine</h3>
+                <p>M.R.P. Rs. 240.00</p>
+                <button onclick="decreaseItem('Handmade Soap Jasmine', 240)"
+                    style="padding: 5px 9px; font-size: 18px;">-</button>
+                <button onclick="addToCart('Handmade Soap Jasmine', 240)" style="padding: 3px 9px; font-size: 18px;">Add to
+                    Cart</button>
+                <button onclick="increaseItem('Handmade Soap Jasmine', 240)"
+                    style="padding: 3px 9px; font-size: 18px;">+</button>
+            </div>
+
+             <!-- product 7-->
+             <div class="product-item">
+                <div class="product-image">
+                    <img src="https://greenfeels.in/cdn/shop/products/Lavender_f7b2a359-7f45-4051-b81b-afa0fd21e905.jpg?v=1656576532"
+                        data-hover="https://greenfeels.in/cdn/shop/products/Lavender-1_c0ebb8d2-ae29-4e1c-9dfb-cef472b2b315.jpg?v=1656576537"
+                        alt="Eco Product 2">
+                </div>
+                <h3>Lavender Soap</h3>
+                <p>M.R.P. Rs. 260.00</p>
+                <button onclick="decreaseItem('Lavender Soap', 260)"
+                    style="padding: 5px 9px; font-size: 18px;">-</button>
+                <button onclick="addToCart('Lavender Soap', 260)" style="padding: 3px 9px; font-size: 18px;">Add to
+                    Cart</button>
+                <button onclick="increaseItem('Lavender Soap', 260)"
+                    style="padding: 3px 9px; font-size: 18px;">+</button>
+            </div>
+
+             <!-- product 8-->
+             <div class="product-item">
+                <div class="product-image">
+                    <img src="https://greenfeels.in/cdn/shop/products/20211011_152133_2bfec896-f295-45b0-be36-2c2244d30121.jpg?v=1656573247"
+                        data-hover="https://greenfeels.in/cdn/shop/products/20200928_173546_aa93958e-e770-47be-be35-89aab3d8560f.jpg?v=1656573261"
+                        alt="Eco Product 2">
+                </div>
+                <h3>DishWash Scrub Combo </h3>
+                <s>M.R.P. Rs. 300.00</s>
+                <p>M.R.P. Rs. 270.00</p>
+                <button onclick="decreaseItem('DishWash Scrub Combo', 270)"
+                    style="padding: 5px 9px; font-size: 18px;">-</button>
+                <button onclick="addToCart('DishWash Scrub Combo', 270)" style="padding: 3px 9px; font-size: 18px;">Add to
+                    Cart</button>
+                <button onclick="increaseItem('DishWash Scrub Combo', 270)"
+                    style="padding: 3px 9px; font-size: 18px;">+</button>
+            </div>
+
+             <!-- product 9-->
+             <div class="product-item">
+                <div class="product-image">
+                    <img src="https://greenfeels.in/cdn/shop/products/e415a0_bb513febc2614d27ba7f99011ecc29ef_mv2.webp?v=1656568817"
+                        data-hover="https://greenfeels.in/cdn/shop/products/e415a0_7b6a78de5b1146b88c07718130e95b0c_mv2.webp?v=1656568822"
+                        alt="Eco Product 2">
+                </div>
+                <h3>Anti hair Fall Shampoo</h3>
+                <p>M.R.P. Rs. 315.00</p>
+                <button onclick="decreaseItem('Anti hair Fall Shampoo', 315)"
+                    style="padding: 5px 9px; font-size: 18px;">-</button>
+                <button onclick="addToCart('Anti hair Fall Shampoo', 315)" style="padding: 3px 9px; font-size: 18px;">Add to
+                    Cart</button>
+                <button onclick="increaseItem('Anti hair Fall Shampoo', 315)"
+                    style="padding: 3px 9px; font-size: 18px;">+</button>
+            </div>
+
+             <!-- product 10-->
+             <div class="product-item">
+                <div class="product-image">
+                    <img src="https://greenfeels.in/cdn/shop/products/LaundryBarPack.jpg?v=1629980238"
+                        data-hover="https://greenfeels.in/cdn/shop/products/1160746584.jpg?v=1629980484"
+                        alt="Eco Product 2">
+                </div>
+                <h3>Natural Laundry BAr Soap</h3>
+                <p>M.R.P. Rs. 225.00</p>
+                <button onclick="decreaseItem('Natural Laundry BAr Soap', 225)"
+                    style="padding: 5px 9px; font-size: 18px;">-</button>
+                <button onclick="addToCart('Natural Laundry BAr Soap', 225)" style="padding: 3px 9px; font-size: 18px;">Add to
+                    Cart</button>
+                <button onclick="increaseItem('Natural Laundry BAr Soap', 225)"
+                    style="padding: 3px 9px; font-size: 18px;">+</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Cart Section -->
+    <section id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <p>Your cart is empty</p>
+        </div>
+        <p id="cart-total">Total: Rs.0</p>
+        <button id="checkout-btn"><a href="./checkout.html">Checkout</a></button>
+    </section>
+    </div>
+
+
+    <script src="./dental.js"></script>
+</body>
+
+</html>

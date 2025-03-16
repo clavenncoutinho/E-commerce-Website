@@ -1,0 +1,137 @@
+/* Container for the entire product list */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* Styling for each product card */
+.product-item {
+    background-color:whitesmoke;    /* Light background for the card */
+    border-radius: 8px;           /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+    overflow: hidden;
+    padding: 16px;
+    text-align: center;
+    width: 200px;                 /* Set a fixed width for the cards */
+    transition: transform 0.3s;   /* Animation for hover effect */
+}
+
+/* Hover effect for each product card */
+.product-item:hover {
+    transform: translateY(-5px);  /* Slight lift on hover */
+}
+
+/* Styling for product images */
+.product-item img {
+    border-radius: 8px;
+    height: 150px;                /* Fixed height for uniformity */
+    object-fit: cover;
+    width: 100%;                  /* Full width within the container */
+}
+
+/* Product title styling */
+.product-item h3 {
+    color: #333;
+    font-size: 1.1em;
+    margin: 12px 0 8px;
+}
+
+/* Product price styling */
+.product-item p {
+    color: #666;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* Button styling */
+.product-item button {
+    background-color: #1e3323;     /* Green color for eco theme */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+.product-item button:hover {
+    background-color: #218838;     /* Darker green on hover */
+}
+
+/* Specific styling for "+" and "-" buttons */
+.product-item button:first-child,
+.product-item button:last-child {
+    padding: 6px 10px;
+    font-size: 18px;
+    
+}
+/* Cart section styling */
+#cart {
+    background-color: #f1f1f1;       /* Light background for the cart section */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;                    /* Set a fixed width for the cart section */
+    text-align: center;
+}
+
+/* Cart heading styling */
+#cart h2 {
+    color: #333;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+/* Cart items container styling */
+#cart-items {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-height: 200px;               /* Limit height with overflow */
+    overflow-y: auto;                /* Add scroll for overflow */
+    padding: 10px;
+}
+
+/* Individual cart item styling */
+#cart-items p {
+    color: #555;
+    font-size: 0.95em;
+    margin: 8px 0;
+}
+
+/* Checkout button styling */
+#checkout-btn {
+    background-color: #28a745;       /* Green color for eco theme */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+/* Checkout button hover effect */
+#checkout-btn:hover {
+    background-color: #218838;
+}
+
+/* Remove link style from the button's <a> tag */
+#checkout-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Adjust the link style to make the entire button clickable */
+#checkout-btn a:hover {
+    color: white; /* Ensure text color remains white on hover */
+}

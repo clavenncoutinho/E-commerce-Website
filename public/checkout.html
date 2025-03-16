@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Eco-Friendly Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./checkout.css">
+</head>
+<body>
+    <script>
+        async function makePayment() {
+    const amount = 500; // Example amount in INR
+
+    const response = await fetch("http://localhost:3000/create-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount, currency: "INR" }),
+    });
+
+    const { orderId } = await response.json();
+
+    const options = {
+        key: "your_razorpay_key_id", // Public key
+        amount: amount * 100, // Convert to paise
+        currency: "INR",
+        name: "House Rent Payment",
+        description: "Payment for rent",
+        order_id: orderId,
+        handler: async function (response) {
+            const verifyRes = await fetch("http://localhost:3000/verify-payment", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    order_id: orderId,
+                    payment_id: response.razorpay_payment_id,
+                    signature: response.razorpay_signature,
+                }),
+            });
+
+            const verifyData = await verifyRes.json();
+            if (verifyData.success) {
+                alert("Payment Successful!");
+                window.location.href = "main.html"; // Redirect to main page
+            } else {
+                alert("Payment verification failed!");
+            }
+        },
+        prefill: {
+            name: "Customer Name",
+            email: "customer@example.com",
+            contact: "9999999999",
+        },
+        theme: {
+            color: "#528FF0",
+        },
+    };
+
+    const rzp = new Razorpay(options);
+    rzp.open();
+}
+
+    </script>
+    <div class="container">
+        <header>
+            <h1>Checkout</h1>
+        </header>
+        <form action="/checkout" method="post" id="checkout-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact No.</label>
+                <input type="tel" id="contact" name="contactnum" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="billing-address">Billing Address</label>
+                <textarea id="billing-address" name="billingAddress" rows="4" required></textarea>
+            </div>
+
+            <!-- Eco-Friendly Packaging Options -->
+            <fieldset class="packaging-options">
+                <legend>Choose Your Eco-Friendly Packaging:</legend>
+                <label>
+                    <input type="radio" name="packaging" value="12" required>
+                    Biodegradable Packaging (+12 Rs)
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="packaging" value="8" required>
+                    Recycled & Reusable Packaging (+8 Rs)
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="packaging" value="19" required>
+                    Innovative Material Packaging (+19 Rs)
+                </label>
+            </fieldset>
+
+            <!-- Green Shipping Options -->
+            <fieldset class="shipping-options">
+                <legend>Choose Your Green Shipping Options:</legend>
+                <label>
+                    <input type="radio" name="shipping" value="15" required>
+                    Carbon Neutral Shipping (+15 Rs)
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="shipping" value="10" required>
+                    Slow Delivery (Discount 5-10 Rs)
+                </label>
+            </fieldset> 
+
+            <button type="submit" onclick="alert('Order Placed Successfully!!')">Submit Order</button>
+        </form>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Eco-Friendly Store. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to JavaScript -->
+    <script src="../index.js"></script>
+</body>
+</html>
